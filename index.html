@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Display Webcam Stream</title>
+ 
+<style>
+#container {
+	margin: 0px auto;
+	width: 500px;
+	height: 375px;
+	border: 10px #333 solid;
+}
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #666;
+}
+</style>
+</head>
+ 
+<body>
+<div id="container">
+	<video autoplay="true" id="videoElement">
+	
+	</video>
+</div>
+<script>
+var video = document.querySelector("#videoElement");
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+</script>
+<center>
+
+</br>
+<button onclick=countdown(3);this.disabled=true;end();>
+<p> Press this button when you are ready to begin recording your presentation</p>
+</button>
+
+
+<script type="text/javascript">
+var timeoutHandle;
+function countdown(minutes) {
+    var seconds = 60;
+    var mins = minutes
+    function tick() {
+        var counter = document.getElementById("timer");
+        var current_minutes = mins-1
+        seconds--;
+        counter.innerHTML =
+        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds + "<br/><br/>You are currently being observed by a researcher. When the timer ends, please close this tab.");
+        if( seconds > 0 ) {
+            timeoutHandle=setTimeout(tick, 1000);
+        } 
+          else {
+            if(mins > 1){
+               // countdown(mins-1);
+               setTimeout(function () { countdown(mins - 1); }, 1000);
+            }
+        }
+    }
+    tick();
+}
+</script>
+
+<p>Time left:</p>
+<p id = "timer"></p>
+
+<script>
+function end(){
+if (seconds = 179){
+   <p>completed</p>}}
+</script>
+
+</center>
+
+
+</html>
