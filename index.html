@@ -41,9 +41,45 @@ if (navigator.mediaDevices.getUserMedia) {
 <center>
 
 </br>
-<button onclick=countdown(3);this.disabled=true;end();>
-<p> Press this button when you are ready to begin recording your presentation</p>
-</button>
+
+<p>Please enter:</p>
+
+
+<input id="textarea0" type="textarea" placeholder="First six digits of ID" value=""/>
+<input id="textarea1" type="textarea" placeholder="Last two digits of ID" value=""/>
+<input id="Button1" type="button" value="Authenticate" onclick= "bc();"/>
+
+
+</br>
+</br>
+
+
+
+<input id="Button2" type="button" value="Press this button when you are ready to begin recording your presentation" onclick= "f1();" disabled="true"/>
+
+
+
+<script>
+var x = document.getElementById("textarea1").value;
+var y = document.getElementById("Button1");
+var z = document.getElementById("Button2");
+function bc() {
+x=textarea1.value;
+if (x == "11"){
+	y.disabled=true;
+	document.getElementById("Button2").disabled=false;
+}
+else{
+document.getElementById("textarea1").value = "Incorrect identification";}}
+   </script>
+
+<script>
+function f1() {
+var n = 1
+if (n ==1) {
+	countdown(3); document.getElementById("Button2").disabled=true;}}   
+</script>
+
 
 
 <script type="text/javascript">
@@ -74,11 +110,6 @@ function countdown(minutes) {
 <p>Time left:</p>
 <p id = "timer"></p>
 
-<script>
-function end(){
-if (seconds = 179){
-   <p>completed</p>}}
-</script>
 
 </center>
 
